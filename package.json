@@ -1,23 +1,29 @@
 {
-  "name": "xbot",
+  "name": "hackbot",
   "version": "0.0.0",
   "private": true,
   "author": "Anish Athalye <me@anishathalye.com>",
-  "description": "TechX's robot slave",
+  "description": "HackMIT's robot slave",
+  "scripts": {
+    "start-redis": "redis-server > /dev/null & echo $! > redis.pid",
+    "stop-redis": "kill -TERM $(cat redis.pid) && rm redis.pid",
+    "start": "env $(cat .env 3>/dev/null) bin/hubot -a slack"
+  },
   "dependencies": {
-    "hubot": "^2.18.0",
+    "github": "^0.2.4",
+    "google-spreadsheet": "^1.0.1",
+    "hubot": "^2.12.0",
+    "hubot-conf": "^1.0.0",
     "hubot-diagnostics": "0.0.1",
-    "hubot-google-images": "^0.2.6",
-    "hubot-google-translate": "^0.2.0",
-    "hubot-help": "^0.1.3",
-    "hubot-heroku-keepalive": "^1.0.2",
-    "hubot-maps": "0.0.2",
-    "hubot-pugme": "^0.1.0",
-    "hubot-redis-brain": "0.0.3",
-    "hubot-rules": "^0.1.1",
-    "hubot-scripts": "^2.16.2",
-    "hubot-shipit": "^0.2.0",
-    "hubot-slack": "^3.4.2"
+    "hubot-group": "^1.0.0",
+    "hubot-help": "^0.1.1",
+    "hubot-offix": ">=0.0.7",
+    "hubot-redis-brain": "0.0.2",
+    "hubot-redisred": "^1.1.1",
+    "hubot-shortcut": "^1.0.0",
+    "hubot-slack": "^3.4.0",
+    "hubot-wolfram": "1.0.7",
+    "timeago": "^0.2.0"
   },
   "engines": {
     "node": "0.10.x"
