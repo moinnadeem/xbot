@@ -1,4 +1,4 @@
-cription:
+# Description:
 #   Quick test to see if hubot is alive.
 #
 # Dependencies:
